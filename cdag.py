@@ -377,31 +377,3 @@ def average_Cost(set, i, c_g, w_g):
     average_s = i_slen/fin_slen
     print("average schedule length:",average_s)
     return average_s
-
-if __name__ == '__main__':
-    
-    #print(succ(task_set[2]))
-    #print(pre(task_set[2]))
-    '''
-    for i in range(0, len(task_set)):
-        SortList(task_set, c, task_set[i])
-    print(sortlist)
-    FCFS_schedule(sortlist)
-    HEFT_schedule(sortlist)
-    for i in sortlist:
-        print(Makespan(sortlist, i, c, w))
-    '''
-    
-    c_list, c_g, w_g =compound_G(task_set,task_set1)
-    print(w_g)
-    for i in range(0, len(c_list)):
-        SortList(c_list, c_g, c_list[i])
-    print(sortlist)
-    #HEFT_schedule(sortlist)
-    for i in sortlist:
-       print(Makespan(sortlist,i, c_g, w_g))
-    depth(sortlist, c_g)
-    #获取节点深度
-    d = depth(sortlist, c_g)
-    #FCFS_m_schedule(sortlist, c_g, w_g)
-    #average_Cost(sortlist, 6, c_g, w_g)
