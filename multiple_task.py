@@ -3,11 +3,7 @@ import random
 import DAG
 import sys
 
-'''
-#将有向无环图，变为树
-#计算出最小代价路径
-#dag可靠模型中使用的road路径遍历消耗太多，使用哈夫曼可以减少，（可能错误的）
-'''
+
 
 def Compound_G(taskset1, taskset2, t_c, t_w, t1_c, t1_w):
     #将taskset2的所有节点重新标号，更改c矩阵
