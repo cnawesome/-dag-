@@ -158,13 +158,7 @@ def preb(list, c, node_post, task_order, node):
     return task_order, thrownlist
    
 def preb_1(list, c, node_id, task_order, node):
-    '''
-        version 1
-        实现计算任务节点的前驱结点，迭代求出所有前驱的结点(在node_id之前的)
-        node_id:要执行的任务节点
-        node：用来迭代前继
-        初始化：node_id equ node
-    '''
+    
     prelist = []
     thrownlist = []
     for i in range(len(c)):  
@@ -802,12 +796,7 @@ def Slowdown(node_i, Gm, gm_c, gm_w, G, g_c, g_w):
     return slowdown
 
 def Slowdown_1(node_i, Gm, gm_c, gm_w, G, g_c, g_w):
-    '''
-        一般算法使用
-        
-        思想:对一个DAG生成的执行队列计算调度长度，该队列的每个节点都根据前驱计算调度长度，然后计算总和。
-            队列中有前驱相关性的，可以在计算后减去那部分调度长度。
-    '''
+    
     slowdown = 0
     
     time1 = 0
@@ -865,12 +854,7 @@ def Slowdown_1(node_i, Gm, gm_c, gm_w, G, g_c, g_w):
     return slowdown
 
 def Makerspan(order, c, w):
-    '''
-        问题：只是求出了每个节点的从前驱到节点的时间长度，要求是求整个任务队列的调度时间长度
-        当提出这个问题时，其实这是离成功已经不远了，只差一步
-
-        解决这个问题时：只是单纯的按顺序加所有节点的调度长度是正确的吗？已提出回答，见slowndown_1注释。
-    '''
+    
     #最晚执行时间的中间结果
     eft_median = []
     #最晚任务执行时间
@@ -922,18 +906,7 @@ def Makerspan(order, c, w):
     return eft_time  
 
 def Makerspan_1(order, c, w):
-    '''
-        问题：只是求出了每个节点的从前驱到节点的时间长度，要求是求整个任务队列的调度时间长度
-        当提出这个问题时，其实这是离成功已经不远了，只差一步
-
-        解决这个问题时：只是单纯的按顺序加所有节点的调度长度是正确的吗？确实不对，原因出在结点不完整,已解决
-
-        task_order -->  task_ord  --> eft_time(eft_median)
-
-        在排除路径中有点小问题，解决
-        throw有问题，换了种方式已解决
-
-    '''
+    
     #最晚执行时间的中间结果
     eft_median = []
     #最晚任务执行时间
