@@ -1,5 +1,5 @@
 A static scheduling heuristic for heterogeneous hardware
-一个多DAG调度项目，用来解决多DAG的不公平性。
+一个多DAG调度项目。
 
 ##### random node
 随机生成一个DAG
